@@ -1,6 +1,6 @@
 {
   "name": "@edium/fsm",
-  "version": "2.1.4",
+  "version": "2.1.5",
   "description": "Simple finite state machine framework that can be used with client or server.",
   "repository": {
     "type": "git",
@@ -52,20 +52,20 @@
   "author": "David LaTour <david@edium.com>",
   "devDependencies": {
     "@types/chai": "^4.3.4",
-    "@types/lodash": "^4.14.188",
-    "@types/mocha": "^10.0.0",
-    "@typescript-eslint/eslint-plugin": "^5.43.0",
-    "@typescript-eslint/parser": "^5.43.0",
+    "@types/lodash": "^4.14.191",
+    "@types/mocha": "^10.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.48.1",
+    "@typescript-eslint/parser": "^5.48.1",
     "chai": "^4.3.7",
-    "eslint": "^8.27.0",
+    "eslint": "^8.31.0",
     "istanbul": "^0.4.5",
     "jsonlint": "^1.6.3",
-    "mocha": "^10.1.0",
+    "mocha": "^10.2.0",
     "nyc": "^15.1.0",
     "sonar-scanner": "^3.1.0",
     "ts-node": "^10.9.1",
-    "typedoc": "^0.23.21",
-    "typescript": "^4.8.4"
+    "typedoc": "^0.23.24",
+    "typescript": "^4.9.4"
   },
   "dependencies": {
     "lodash": "^4.17.21",
