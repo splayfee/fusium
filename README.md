@@ -1,4 +1,5 @@
 # Fusium Finite State Machine
+
 ## Overview
 **Fusium** is a simple finite state machine for gaming or workflow systems. It supports local and global triggers, entry and exit actions, and the ability to block state transitions before exit.
 
@@ -14,44 +15,46 @@
 
 ## Installation
 
-    $ npm install fusium
+```.bash
+pnpm install fusium
+```
 
 ## Examples
 
 Begin by referencing the module:
 
 ```javascript
-var fusium = require("fusium");
+import fusium from 'fusium';
 ```
 
 Then add in the classes:
 
 ```javascript
-var State = fusium.classes.State;
-var StateMachineError = fusium.classes.StateMachineError;
-var StateMachine = fusium.classes.StateMachine;
-var Transition = fusium.classes.Transition;
+const State = fusium.classes.State;
+const StateMachineError = fusium.classes.StateMachineError;
+const StateMachine = fusium.classes.StateMachine;
+const Transition = fusium.classes.Transition;
 ```
 
 Finally, wire up your state machine and start it:
 
 ```Javascript
-var entryAction = {
+const entryAction = {
     execute: function( state ) {
         state.trigger( "next" );
     };
 };
 
-var exitAction = {
+const exitAction = {
     execute: function( state ) {
         // Returning false will cancel the state transition
         return true;
     };
 };
 
-var decideAction = {
+const decideAction = {
     execute: function( state ) {
-        var index = Math.floor( Math.random() * 2 );
+        const index = Math.floor( Math.random() * 2 );
         if ( index === 0 ) {
             state.trigger( "goto3" );
         } else if ( index === 1 ) {
@@ -60,19 +63,19 @@ var decideAction = {
     }
 };
 
-var finalAction = {
+const finalAction = {
     execute: function( state ) {
         // Can perform some final actions, the state machine is finished running.
     };
 };
 
-var stateMachine = new StateMachine();
-var s1 = stateMachine.createState( "My first state", false );
-var s2 = stateMachine.createState( "My second state", false );
-var s3 = stateMachine.createState( "My third state", false );
-var s4 = stateMachine.createState( "My fourth state", false );
+const stateMachine = new StateMachine();
+const s1 = stateMachine.createState( "My first state", false );
+const s2 = stateMachine.createState( "My second state", false );
+const s3 = stateMachine.createState( "My third state", false );
+const s4 = stateMachine.createState( "My fourth state", false );
 // Notice true indicates a final accept state.
-var s5 = stateMachine.createState( "My final state", true ); 
+const s5 = stateMachine.createState( "My final state", true ); 
 
 // Wire up all entry and exit actions
 s1.entryAction = entryAction;
